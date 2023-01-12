@@ -1,3 +1,9 @@
+mod settings;
+use settings::Settings;
+
 fn main() {
-    println!("Hello, world!");
+    let mut settings = Settings::new();
+
+    settings.load();
+    settings.debug();
 }
