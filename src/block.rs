@@ -1,6 +1,6 @@
+use hex::encode;
 use sha3::Digest;
 use sha3::Sha3_256;
-use hex::encode;
 
 const DIFFICULT_PREFIX: &str = "0000";
 
