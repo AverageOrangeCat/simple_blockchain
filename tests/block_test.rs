@@ -40,6 +40,6 @@ fn test_validate() -> () {
         nounce: 29861
     };
 
-    assert_eq!(invalid_block.validate(String::from("")), false);
-    assert_eq!(valid_block.validate(String::from("")), true);
+    assert_eq!(invalid_block.validate(), false);
+    assert_eq!(valid_block.validate(), true);
 }

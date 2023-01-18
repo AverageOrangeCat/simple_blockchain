@@ -4,6 +4,7 @@ use hex::encode;
 
 const DIFFICULT_PREFIX: &str = "0000";
 
+#[derive(Debug)]
 pub struct Block {
     pub previous_hash: String,
     pub current_hash: String,
@@ -31,17 +32,17 @@ impl Block {
         }
     }
 
-    pub fn validate(&self, previous_hash: String) -> bool {
-        self.previous_hash == previous_hash &&
+    pub fn validate(&self) -> bool {
         self.current_hash == self.calculate_hash() &&
         self.current_hash.starts_with(DIFFICULT_PREFIX)
     }
 
-    pub fn debug(&self, previous_hash: String) -> () {
-        println!("[ DEBUG ] is_valid: {:?}", self.validate(previous_hash));
+    pub fn debug(&self) -> () {
+        println!("[ DEBUG ] is_valid: {:?}", self.validate());
         println!("[ DEBUG ] previous_hash: {:?}", self.previous_hash);
         println!("[ DEBUG ] current_hash: {:?}", self.current_hash);
         println!("[ DEBUG ] content: {:?}", self.content);
         println!("[ DEBUG ] nounce: {:?}", self.nounce);
+        println!("[ DEBUG ] ");
     }
 }
